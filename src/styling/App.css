@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+}
+
+#root {
+    height: 100vh;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+.main-app {
+    flex: 1;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+
+#page-header {
+    display: block;
+    text-align: center;
+}
+
+.title-text {
+    font-weight: 100;
+    font-size: 30px;
+    margin-top: 20px;
+    padding: 20px;
+    color: #4d4646;
+    text-decoration: underline #ec615b;
+}
+
+.inner-main {
+    margin: 0 auto;
+}
+
+.alert {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#key-main {
+    display: flex;
+    justify-content: center;
+}
+
+#key-inner {
+    margin: 50px 0;
+    box-shadow: 0px 2px 10px 2px rgb(219, 219, 219);
+    border-radius: 4px;
+    padding: 15px;
+    text-align: left;
+}
+
+.link {
+    color: black;
+    padding: 0 10px;
+}
+
+.link:hover {
+    text-decoration: underline #ec615b;
+}
+
+#get-started {
+    font-size: 25px;
+    text-decoration: underline #ec615b;
+}
+
+.save-icon {
+    color: #ec615b;
+    margin-right: 5px;
+}
