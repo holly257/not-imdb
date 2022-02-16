@@ -1,9 +1,7 @@
 import React from 'react';
-import GrowingContext from '../../context';
 import EachCard from '../results/EachCard';
 
 class SavedPage extends React.Component {
-    static contextType = GrowingContext;
 
     render() {
         return (

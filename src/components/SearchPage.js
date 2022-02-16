@@ -1,60 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import config from '../config';
 import ApiService from '../api-service';
-import GrowingContext from '../context';
 import ResultsPage from './results/ResultsPage';
+    import { useStoreActions, useStoreState } from 'easy-peasy';
 
-class SearchPage extends React.Component {
-    static contextType = GrowingContext;
+function SearchPage() {
 
-    state = {
-        search_value: '',
-    };
+    
+    const notes = useStoreState((state) => state.notes);
+//         const search_term = '';
+//         const url = `${config.API_ENDPOINT}?key=${config.API_KEY}&q=${encodeURIComponent(
+//                 search_term
+//             )}&image_type=photo&per_page=21`;
+    
+//         const [state, setState] = useState([])
+//         useEffect(()=>{
+//             // fetch(url, { method: 'get' }).then(res => {
+//             //     let response;
+//             //     if(res.ok){
 
-    submitSearch = e => {
-        // this.context.clearError();
+//             //         response =  res.json();
+//             //     }
+//             //    // setState(response);
+//             // }).then(res => {
+//             //     console.log(res.hits);
+//             //     //setState(res);
+//             // })
 
-        // let search_term = '';
-        // if (e.target) {
-        //     e.preventDefault();
-        //     const { search } = e.target;
-        //     search_term = search.value;
-        // } else {
-        //     search_term = e;
-        // }
+//             const fetchData = async () => {
+//                 try {
+//                   const response = await fetch(url, { method: 'get' });
+//                   const json = await response.json();
+//                   const resp = json.hits
+//                   console.log(resp);
+//                   //setState(json.hits);
+//                 } catch (error) {
+//                   console.log("error", error);
+//                 }
+//                 setState('value')
+//               };
+          
+//               fetchData();
+//         })
+    
+    
 
-        // const url = `${config.API_ENDPOINT}?key=${config.API_KEY}&q=${encodeURIComponent(
-        //     search_term
-        // )}&image_type=photo&per_page=21`;
-
-        // ApiService.getImages(url)
-        //     .then(data => {
-        //         if (data.total === 0) {
-        //             this.context.updateError(
-        //                 `Sorry, we don't have any images for that yet. Try 'dogs' or 'landscape'`
-        //             );
-        //         }
-        //         this.context.updateResults(data);
-        //     })
-        //     .catch(error => {
-        //         this.context.updateError('Sorry, something went wrong. Please try again later.');
-        //     });
-    };
-
-    handleTyping = e => {
-        this.setState({ search_value: e.target.value });
-    };
-
-    render() {
         return (
             <main className="inner-main">
                 <section id="page-header">
                     <h3 className="title-text">S E A R C H</h3>
 
                     <form
-                        onSubmit={e => {
-                            this.submitSearch(e);
-                        }}
+                       
                     >
                         <input
                             className="search"
@@ -63,19 +60,17 @@ class SearchPage extends React.Component {
                             name="search"
                             required
                             placeholder="Search Images"
-                            onChange={this.handleTyping}
                         ></input>
                             <button type="submit">Go</button>
 
-                        {this.context.error && <p className="alert">{this.context.error}</p>}
                     </form>
                 </section>
                 <section>
-                    {/* <ResultsPage {...this.context.results} /> */}
+        <div>{state}</div>
+                    {/* <ResultsPage state={state} /> */}
                 </section>
             </main>
         );
-    }
 }
 
 export default SearchPage;

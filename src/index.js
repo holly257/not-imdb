@@ -3,14 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { Context } from './context';
+import { StoreProvider, createStore } from 'easy-peasy';
+import store from './store';
+
+const Store = createStore(store);
 
 
 ReactDOM.render(
-    <Context>
+    <StoreProvider store={Store}>
         <BrowserRouter>
             <App />
         </BrowserRouter>{' '}
-    </Context>,
+    </StoreProvider >,
     document.getElementById('root')
 );

@@ -1,11 +1,9 @@
 import React from 'react';
-import GrowingContext from '../../context';
 import '../../styling/Results.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 class EachCard extends React.Component {
-    static contextType = GrowingContext;
     state = {
         item_saved: false,
     };
